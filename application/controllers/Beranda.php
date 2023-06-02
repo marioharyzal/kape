@@ -11,16 +11,17 @@ class Beranda extends CI_Controller
 		$this->load->model('Model_gejala');
 		$this->load->model('Model_data_hasil_diagnosis');
 		$this->load->model('Model_penanganan');
+		$this->load->model('Model_artikel');
 	}
 
 	public function index()
 	{
 		$data['penyakit'] = $this->Model_penyakit->get()->result();
-		$data['gejalaAkar'] = $this->Model_gejala->getWhere('Kepala')->result();
-		$data['gejalaBatang'] = $this->Model_gejala->getWhere('Badan')->result();
-		$data['gejalaDaun'] = $this->Model_gejala->getWhere('Kaki')->result();
-		$data['gejalaBuah'] = $this->Model_gejala->getWhere('Pencernaan')->result();
-		$data['gejalaBuah2'] = $this->Model_gejala->getWhere('Pernafasan')->result();
+		$data['artikel'] = $this->Model_artikel->get()->result();
+		$data['gejalaAkar'] = $this->Model_gejala->getWhere('Akar')->result();
+		$data['gejalaBatang'] = $this->Model_gejala->getWhere('Batang')->result();
+		$data['gejalaDaun'] = $this->Model_gejala->getWhere('Daun')->result();
+		$data['gejalaBuah'] = $this->Model_gejala->getWhere('Buah')->result();
 		$data['hasil'] = $this->Model_data_hasil_diagnosis->get_detail()->result();
 
 		$this->load->view('beranda', $data);
@@ -46,10 +47,19 @@ class Beranda extends CI_Controller
 			->set_output(json_encode($penyakit->row_array()));
 	}
 
+
 	public function data_penyakit()
 	{
 		$data['penyakit'] = $this->Model_penyakit->get()->result();
 		$this->load->view('data_penyakit', $data);
+	}
+
+	public function detail_artikel($id)
+	{
+		$artikel = $this->Model_artikel->find($id);
+		$this->output
+			->set_content_type('application/json')
+			->set_output(json_encode($artikel->row_array()));
 	}
 
 	public function detail_hasil($id_hasil)

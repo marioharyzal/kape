@@ -39,7 +39,7 @@
     <br>
 
     <p style="font-size: 14px;" align="left"><b>Dari gejala yang anda pilih sebelumnya maka dapat diketahui bahwa penyakit yang diderita pada kambing Anglo Nubian anda adalah :</p>
- 
+
     <p>
         <?php $nilai = $data_hasil_diagnosis->cf ?>
         <?= $data_hasil_diagnosis->nm_penyakit ?>/<?= round($nilai * 100, 2) ?>% (<?= $nilai ?>)
