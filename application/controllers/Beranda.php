@@ -18,10 +18,11 @@ class Beranda extends CI_Controller
 	{
 		$data['penyakit'] = $this->Model_penyakit->get()->result();
 		$data['artikel'] = $this->Model_artikel->get()->result();
-		$data['gejalaAkar'] = $this->Model_gejala->getWhere('Akar')->result();
-		$data['gejalaBatang'] = $this->Model_gejala->getWhere('Batang')->result();
-		$data['gejalaDaun'] = $this->Model_gejala->getWhere('Daun')->result();
-		$data['gejalaBuah'] = $this->Model_gejala->getWhere('Buah')->result();
+		$data['gejalaKepala'] = $this->Model_gejala->getWhere('Kepala')->result();
+		$data['gejalaBadan'] = $this->Model_gejala->getWhere('Badan')->result();
+		$data['gejalaKaki'] = $this->Model_gejala->getWhere('Kaki')->result();
+		$data['gejalaPencernaan'] = $this->Model_gejala->getWhere('Pencernaan')->result();
+		$data['gejalaPernafasan'] = $this->Model_gejala->getWhere('Pernafasan')->result();
 		$data['hasil'] = $this->Model_data_hasil_diagnosis->get_detail()->result();
 
 		$this->load->view('beranda', $data);
