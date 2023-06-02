@@ -147,6 +147,9 @@
             </tbody>
           </table>
         </div>
+        <div class="col-md-12 mt-2 text-center">
+            <a href="<?php echo base_url('index.php/beranda/data_penyakit/'); ?>" class="btn btn-primary">Lihat semua data</a>
+        </div>
       </div>
     </div>
 

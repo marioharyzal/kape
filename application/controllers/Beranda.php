@@ -45,6 +45,12 @@ class Beranda extends CI_Controller
 			        ->set_output(json_encode($penyakit->row_array()));
 	}
 
+	public function data_penyakit()
+	{
+		$data['penyakit'] = $this->Model_penyakit->get()->result();
+		$this->load->view('data_penyakit', $data);
+	}
+
 	public function detail_hasil($id_hasil)
 	{
 		$hasil = $this->Model_data_hasil_diagnosis->get_where_detail($id_hasil)->row();
