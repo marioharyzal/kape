@@ -7,7 +7,7 @@
 				<h5 class="card-title mb-0">Ubah Data Gejala</h5>
 			</div>
 			<div class="card-body">
-				<form method="post" action="<?php echo base_url('index.php/gejala/ubah/' .$gejala->id_gejala); ?>">
+				<form method="post" action="<?php echo base_url('index.php/gejala/ubah/' . $gejala->id_gejala); ?>">
 					<div class="mb-3">
 						<label class="form-label">ID Gejala</label>
 						<input name="id_gejala" type="text" class="form-control" value="<?php echo $gejala->id_gejala; ?>">
@@ -19,12 +19,13 @@
 					<div class="mb-3">
 						<label class="form-label">Bagian</label>
 						<select name="bagian" class="form-select mb-3" value="<?php echo $gejala->bagian; ?>">
-				          <option selected> -- Pilih Bagian -- </option>
-				          <option value="Akar">Akar</option>
-				          <option value="Daun">Daun</option>
-				          <option value="Batang">Batang</option>
-				          <option value="Buah">Buah</option>
-				        </select>
+							<option selected> -- Pilih Bagian -- </option>
+							<option value="Kepala">Kepala</option>
+							<option value="Badan">Badan</option>
+							<option value="Kaki">Kaki</option>
+							<option value="Pencernaan">Pencernaan</option>
+							<option value="Pernafasan">Pernafasan</option>
+						</select>
 					</div>
 					<div class="text-center">
 						<button class="btn btn-primary" type="submit" name="submit" value="submit">Simpan</button>

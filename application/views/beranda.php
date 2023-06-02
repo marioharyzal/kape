@@ -148,7 +148,7 @@
           </table>
         </div>
         <div class="col-md-12 mt-2 text-center">
-            <a href="<?php echo base_url('index.php/beranda/data_penyakit/'); ?>" class="btn btn-primary">Lihat semua data</a>
+          <a href="<?php echo base_url('index.php/beranda/data_penyakit/'); ?>" class="btn btn-primary">Lihat semua data</a>
         </div>
       </div>
     </div>
@@ -208,7 +208,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-gejala-akar" aria-expanded="false" aria-controls="flush-gejala-akar">
-                  Akar
+                  Kepala
                 </button>
               </h2>
               <div id="flush-gejala-akar" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordion-gejala">
@@ -224,7 +224,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-gejala-batang" aria-expanded="false" aria-controls="flush-gejala-batang">
-                  Batang
+                  Badan
                 </button>
               </h2>
               <div id="flush-gejala-batang" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordion-gejala">
@@ -240,7 +240,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-gejala-daun" aria-expanded="false" aria-controls="flush-gejala-daun">
-                  Daun
+                  Kaki
                 </button>
               </h2>
               <div id="flush-gejala-daun" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordion-gejala">
@@ -256,13 +256,29 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingFour">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-gejala-buah" aria-expanded="false" aria-controls="flush-gejala-buah">
-                  Buah
+                  Pencernaan
                 </button>
               </h2>
               <div id="flush-gejala-buah" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordion-gejala">
                 <div class="accordion-body">
                   <ul>
                     <?php foreach ($gejalaBuah as $buah) : ?>
+                      <li><?php echo $buah->gejala; ?></li>
+                    <?php endforeach; ?>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-gejala-buah2" aria-expanded="false" aria-controls="flush-gejala-buah">
+                  Pernafasan
+                </button>
+              </h2>
+              <div id="flush-gejala-buah2" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordion-gejala">
+                <div class="accordion-body">
+                  <ul>
+                    <?php foreach ($gejalaBuah2 as $buah) : ?>
                       <li><?php echo $buah->gejala; ?></li>
                     <?php endforeach; ?>
                   </ul>
