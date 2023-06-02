@@ -122,7 +122,7 @@
                 <th scope="col">Penyebab</th>
                 <!-- <th scope="col">Daur Penyakit</th>
                               <th scope="col">Faktor</th> -->
-                <th scope="col">Aksi</th>
+                <!-- <th scope="col">Aksi</th> -->
               </tr>
             </thead>
             <tbody>
@@ -136,11 +136,11 @@
                   <!-- <td><?php echo $row->daur_penyakit; ?></td>
                                     <td><?php echo $row->faktor; ?></td>
 -->
-                  <td>
-                    <button type="button" class="btn btn-sm btn-info detail-penyakit" data-id="<?php echo $row->id_penyakit; ?>" data-bs-toggle="modal" data-bs-target="#modal-penyakit">
+                  <!-- <td>
+                    <button type="button" class="btn btn-sm btn-info detail-penyakit" data-id="<?php echo $row->id_penyakit; ?>" data-bs-toggle="modal" data-bs-target="#modal-penyakit"> -->
                       <!-- <i class="fas fa-info"></i> -->
-                      Detail
-                    </button>
+                      <!-- Detail
+                    </button> -->
                   </td>
                 </tr>
               <?php endforeach; ?>
