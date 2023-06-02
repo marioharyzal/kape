@@ -602,9 +602,8 @@
   <!-- custom script -->
   <script type="text/javascript">
     const detailPenyakitBtn = document.querySelectorAll('.detail-penyakit');
-    const detailArtikelBtn = document.querySelectorAll('.detail-artikel'); >>>
+    const detailArtikelBtn = document.querySelectorAll('.detail-artikel');
 
-    develop - artikel
     const dataTable = new simpleDatatables.DataTable("#datatable", {
       searchable: true,
     });
