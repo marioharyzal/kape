@@ -1,6 +1,6 @@
 <h1 class="h3 mb-3">
 	<!-- <?php echo $pageTitle; ?> -->
-	Beranda	
+	Beranda
 </h1>
 
 <div class="row">
@@ -12,7 +12,7 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col mt-0">
-									<h5 class="card-title" style= "color:black" "font-size:30px" >Jumlah Penyakit</h5>
+									<h5 class="card-title" style="color:black" "font-size:30px">Jumlah Penyakit</h5>
 								</div>
 
 								<div class="col-auto">
@@ -26,9 +26,9 @@
 					</div>
 					<div class="card" style="background-color:Orange">
 						<div class="card-body">
-							<div class="row" >
+							<div class="row">
 								<div class="col mt-0">
-									<h5 class="card-title" style= "color : black">Jumlah Solusi</h5>
+									<h5 class="card-title" style="color : black">Jumlah Solusi</h5>
 								</div>
 
 								<div class="col-auto">
@@ -46,7 +46,7 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col mt-0">
-									<h5 class="card-title" style= "color : black">Jumlah Gejala</h5>
+									<h5 class="card-title" style="color : black">Jumlah Gejala</h5>
 								</div>
 
 								<div class="col-auto">
@@ -60,9 +60,9 @@
 					</div>
 					<div class="card" style="background-color:MediumSeaGreen">
 						<div class="card-body">
-							<div class="row" >
+							<div class="row">
 								<div class="col mt-0">
-									<h5 class="card-title" style= "color : black">Total Hasil Diagnosa</h5>
+									<h5 class="card-title" style="color : black">Total Hasil Diagnosa</h5>
 								</div>
 
 								<div class="col-auto">

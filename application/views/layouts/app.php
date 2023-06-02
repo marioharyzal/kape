@@ -34,8 +34,8 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="<?php echo base_url('index.php/dashboard'); ?>">
-          <span class="align-middle">Kambing Perah</span>
-        </a>
+					<span class="align-middle">Kambing Perah</span>
+				</a>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
@@ -45,22 +45,25 @@
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="<?php echo base_url('index.php/dashboard'); ?>">
 							<i class="align-middle" data-feather="command"></i> <span class="align-middle">Beranda</span>
-			            </a>
-            			<a class="sidebar-link" href="<?php echo base_url('index.php/data_master'); ?>">
-			              	<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Data Master</span>
-			            </a>
-			            <a class="sidebar-link" href="<?php echo base_url('index.php/penanganan'); ?>">
-			              	<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Penanganan</span>
-			            </a>
-			            <a class="sidebar-link" href="<?php echo base_url('index.php/basis_pengetahuan'); ?>">
-			              	<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Basis Pengetahuan</span>
-			            </a>
-			            <a class="sidebar-link" href="<?php echo base_url('index.php/data_hasil_diagnosis'); ?>">
-			              	<i class="align-middle" data-feather="database"></i> <span class="align-middle">Manajemen Hasil</span>
-			            </a>
-			            <a class="sidebar-link" href="<?php echo base_url('index.php/diagnosa'); ?>">
-			              	<i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Perbandingan Perhitungan</span>
-			            </a>
+						</a>
+						<a class="sidebar-link" href="<?php echo base_url('index.php/data_master'); ?>">
+							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Data Master</span>
+						</a>
+						<a class="sidebar-link" href="<?php echo base_url('index.php/penanganan'); ?>">
+							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Penanganan</span>
+						</a>
+						<a class="sidebar-link" href="<?php echo base_url('index.php/basis_pengetahuan'); ?>">
+							<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Basis Pengetahuan</span>
+						</a>
+						<a class="sidebar-link" href="<?php echo base_url('index.php/artikel'); ?>">
+							<i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Artikel</span>
+						</a>
+						<a class="sidebar-link" href="<?php echo base_url('index.php/data_hasil_diagnosis'); ?>">
+							<i class="align-middle" data-feather="database"></i> <span class="align-middle">Manajemen Hasil</span>
+						</a>
+						<a class="sidebar-link" href="<?php echo base_url('index.php/diagnosa'); ?>">
+							<i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Perbandingan Perhitungan</span>
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -69,19 +72,19 @@
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
+					<i class="hamburger align-self-center"></i>
+				</a>
 
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="<?php echo base_url('assets/adminkit/img/avatars/person.png'); ?>" class="avatar img-fluid rounded me-1" alt="" /> <span class="text-dark"><?php echo $this->session->userdata('name'); ?></span>
-              </a>
+								<img src="<?php echo base_url('assets/adminkit/img/avatars/person.png'); ?>" class="avatar img-fluid rounded me-1" alt="" /> <span class="text-dark"><?php echo $this->session->userdata('name'); ?></span>
+							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="<?php echo base_url('index.php/auth/logout'); ?>">Log out</a>
 							</div>
@@ -103,11 +106,11 @@
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<div class="col-lg-6 text-lg-start">Copyright &copy; Kambing Perah 2023</div>	
+							<div class="col-lg-6 text-lg-start">Copyright &copy; Kambing Perah 2023</div>
 							</p>
 						</div>
 					</div>
-				</div> 
+				</div>
 			</footer>
 		</div>
 	</div>
