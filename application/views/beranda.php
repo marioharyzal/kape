@@ -325,7 +325,7 @@
               <div id="flush-gejala-buah2" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordion-gejala">
                 <div class="accordion-body">
                   <ul>
-                    <?php foreach ($gejalaPernapasan as $pernafasan) : ?>
+                    <?php foreach ($gejalaPernafasan as $pernafasan) : ?>
                       <li><?php echo $pernafasan->gejala; ?></li>
                     <?php endforeach; ?>
                   </ul>
@@ -562,7 +562,7 @@
         .then((data) => {
           judulArtikelP.innerHTML = data.judul_artikel;
           deskripsiP.innerHTML = data.deskripsi_artikel;
-          sumberP.innerHTML = data.sumber_artikel;
+          sumberP.innerHTML = `<a href="${data.sumber_artikel}">${data.sumber_artikel}</a>`;
         });
     }, 'click', detailArtikelBtn);
 
