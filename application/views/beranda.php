@@ -202,6 +202,9 @@
               <?php endforeach; ?>
             </tbody>
           </table>
+          <div class="col-md-12 mt-2 text-center">
+            <a href="<?php echo base_url('index.php/beranda/data_penyakit/'); ?>" class="btn btn-primary">Lihat semua data</a>
+          </div>
         </div>
       </div>
     </div>
@@ -333,62 +336,7 @@
     </div>
   </section>
   <!--  -->
-  <section class="page-section bg-light" id="diagnosis">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">Diagnosis</h2>
-        <h3 class="section-subheading text-muted">Daftar Riwayat Hasil diagnosis Kambing Perah Anglo Nubian</h3>
-      </div>
-      <div class="row">
-        <div class="col-md-12 table-responsive">
-          <table id="datatable" class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Waktu Diagnosa</th>
-                <th scope="col">Nama Pengguna</th>
-                <th scope="col">Hasil Dignosis</th>
-                <th scope="col">Nilai Persentase</th>
-                <th scope="col">Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php $no = 0;
-              foreach ($hasil as $row) : ?>
-                <tr>
-                  <td class="text-center"><?php echo ++$no; ?></td>
-                  <td><?php echo $row->tanggal; ?></td>
-                  <td><?php echo $row->nm_user; ?></td>
-                  <td><?php echo $row->nm_penyakit; ?></td>
-                  <td class="text-center">
-                    <?php echo $row->cf * 100 . "%";
 
-                    ?>
-                  </td>
-                  <td>
-                    <a href="<?php echo base_url('index.php/beranda/detail_hasil/' . $row->id_hasil); ?>" class="btn btn-sm btn-info">
-                      <!-- <i class="fas fa-info"></i> -->
-                      Detail
-                      </button>
-                      <a href="<?php echo base_url('index.php/beranda/cetak/' . $row->id_hasil); ?>" class="btn btn-sm btn-secondary">
-                        <!-- <i class="fas fa-info"></i> -->
-                        Cetak
-                        </button>
-                  </td>
-
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
-        </div>
-
-
-        <div class="col-md-12 mt-2 text-center">
-          <button id="button-lakukan-diagnosis" class="btn btn-primary">Lakukan Diagnosis</button>
-        </div>
-      </div>
-    </div>
-  </section>
   <!--  -->
   <section class="page-section d-none" id="lakukan-diagnosis">
     <div class="container">
