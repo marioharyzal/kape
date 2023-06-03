@@ -182,7 +182,7 @@
                 <th scope="col">Kode</th>
                 <th scope="col">Nama Penyakit</th>
                 <th scope="col">Penyebab</th>
-                <th scope="col">Aksi</th>
+                <!-- <th scope="col">Aksi</th> -->
               </tr>
             </thead>
             <tbody>
@@ -193,11 +193,11 @@
                   <td class="text-center"><?php echo $row->id_penyakit; ?></td>
                   <td><?php echo $row->nm_penyakit; ?></td>
                   <td><?php echo $row->penyebab; ?></td>
-                  <td>
+                  <!-- <td>
                     <button type="button" class="btn btn-sm btn-info detail-penyakit" data-id="<?php echo $row->id_penyakit; ?>" data-bs-toggle="modal" data-bs-target="#modal-penyakit">
                       Detail
                     </button>
-                  </td>
+                  </td> -->
                 </tr>
               <?php endforeach; ?>
             </tbody>
