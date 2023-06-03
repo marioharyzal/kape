@@ -46,8 +46,14 @@
 						<a class="sidebar-link" href="<?php echo base_url('index.php/dashboard'); ?>">
 							<i class="align-middle" data-feather="command"></i> <span class="align-middle">Beranda</span>
 						</a>
-						<a class="sidebar-link" href="<?php echo base_url('index.php/data_master'); ?>">
-							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Data Master</span>
+						<a class="sidebar-link" href="<?php echo base_url('index.php/penyakit'); ?>">
+							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Master Data Penyakit</span>
+						</a>
+						<a class="sidebar-link" href="<?php echo base_url('index.php/gejala'); ?>">
+							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Master Data Gejala</span>
+						</a>
+						<a class="sidebar-link" href="<?php echo base_url('index.php/solusi'); ?>">
+							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Master Data Solusi</span>
 						</a>
 						<a class="sidebar-link" href="<?php echo base_url('index.php/penanganan'); ?>">
 							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Penanganan</span>
