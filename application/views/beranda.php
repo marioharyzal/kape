@@ -92,7 +92,8 @@
       </div>
     </div>
   </nav>
-  <!-- Masthead-->
+
+  <!-- Banner -->
   <header class="masthead" style="padding-top : 60px;">
     <div class="jumbotron">
       <h1 class="mt-5">Selamat Datang!</h1>
@@ -100,7 +101,7 @@
     </div>
   </header>
 
-  <!-- Services-->
+  <!-- Artikel -->
   <section class="page-section bg-light" id="artikel">
     <div class="container">
       <div class="text-center">
@@ -167,6 +168,7 @@
     </div>
   </section>
 
+  <!-- Penyakit -->
   <section class="page-section bg-light" id="penyakit">
     <div class="container">
       <div class="text-center">
@@ -335,54 +337,8 @@
       </div>
     </div>
   </section>
-  <!--  -->
 
-  <!--  -->
-  <section class="page-section d-none" id="lakukan-diagnosis">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">Lakukan Diagnosis</h2>
-        <h3 class="section-subheading text-muted">Silahkan lengkapi data di bawah ini</h3>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <form action="<?php echo base_url('index.php/beranda/hitung'); ?>" method="post">
-            <div class="mb-3 row">
-              <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="nama" required="" name="nama">
-              </div>
-            </div>
-            <div class="mb-3 row">
-              <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
-              <div class="col-sm-10">
-                <textarea type="password" class="form-control" required="" id="alamat" name="alamat"></textarea>
-              </div>
-            </div>
-            =======
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-gejala-buah" aria-expanded="false" aria-controls="flush-gejala-buah">
-              Buah
-            </button>
-          </h2>
-          <div id="flush-gejala-buah" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordion-gejala">
-            <div class="accordion-body">
-              <ul>
-                <?php foreach ($gejalaBuah as $buah) : ?>
-                  <li><?php echo $buah->gejala; ?></li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
-  </section>
-  <!--  -->
+  <!-- Table Diagnosis -->
   <section class="page-section bg-light" id="diagnosis">
     <div class="container">
       <div class="text-center">
@@ -436,7 +392,8 @@
       </div>
     </div>
   </section>
-  <!--  -->
+
+  <!-- Form diagnosis -->
   <section class="page-section d-none" id="lakukan-diagnosis">
     <div class="container">
       <div class="text-center">
@@ -523,7 +480,6 @@
                     </label>
                   </div>
                 <?php endforeach; ?>
-
               </div>
             </div>
             <div class="col-md-12 mt-2 text-center">
@@ -597,7 +553,6 @@
         });
     }, 'click', detailArtikelBtn);
 
-    develop - artikel
     lakukanDiagnosisBtn.addEventListener('click', () => {
       const lakukanDiagnosis = document.querySelector('#lakukan-diagnosis');
 
