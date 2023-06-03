@@ -13,6 +13,7 @@
  */
 
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class Pdf extends Dompdf
 {
@@ -46,6 +47,10 @@ class Pdf extends Dompdf
 	 */
 	public function load_view($view, $data = array())
 	{
+		$options = new Options();
+		$options->setChroot(base_url());
+
+		$this->setOptions($options);
 		$html = $this->ci()->load->view($view, $data, TRUE);
 		$this->load_html($html);
 		// Render the PDF
