@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+define("DOMPDF_ENABLE_REMOTE", false);
 
 class Beranda extends CI_Controller
 {
@@ -132,11 +133,12 @@ class Beranda extends CI_Controller
 		$html = $this->output->get_output();
 
 		// Load library
-		$this->load->library('dompdf_gen');
+		$this->load->library('pdf');
 
 		// Convert to PDF
-		$this->dompdf->load_html($html);
-		$this->dompdf->render();
-		$this->dompdf->stream("hasildiagnosa.pdf", array("Attachment" => false));
+		$this->pdf->load_html($html);
+		$this->pdf->setPaper('A4', 'potrait');
+		$this->pdf->render();
+		$this->pdf->stream("hasil-diagnosis-{$id_hasil}.pdf", array("Attachment" => false));
 	}
 }

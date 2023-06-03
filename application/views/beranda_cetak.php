@@ -45,7 +45,8 @@
         <?= $data_hasil_diagnosis->nm_penyakit ?>/<?= round($nilai * 100, 2) ?>% (<?= $nilai ?>)
     </p>
     <div class="text-center">
-        <img class="mx-auto d-block img-thumbnail" style="height: 200px;" src="<?php echo 'uploads/' . $data_hasil_diagnosis->gambar_penyakit; ?>">
+        <img class="mx-auto d-block img-thumbnail" style="height: 200px;" src="<?= $_SERVER["DOCUMENT_ROOT"] . base_url('/uploads/' . $data_hasil_diagnosis->gambar_penyakit) ?>">
+        <p><?= $_SERVER["DOCUMENT_ROOT"] . base_url('/uploads/' . $data_hasil_diagnosis->gambar_penyakit) ?></p>
     </div>
 </div>
 
@@ -68,39 +69,3 @@
         <?php } ?>
     </tbody>
 </table>
-
-<br>
-<br>
-<br>
-
-<!-- <p style="font-size: 14px;" align="left"><b>Penanganan Khusus</p>
-<table id="datatable-fixed-header" class="table table-striped table-bordered" border="1" align="center" style="border: 1px solid black;
-    border-collapse: collapse;" cellspacing="0" width="100%">
-    <thead>
-        <tr bgcolor="#CDCACA">
-            <th>No</th>
-            <th>Gejala</th>
-            <th>Solusi</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        $_no = 1;
-        foreach ($gejala as $row) {
-            $this->db->select('*');
-            $this->db->from('tb_penanganan_khusus');
-            $this->db->where('tb_penanganan_khusus.id_gejala', $row->id_gejala);
-            $this->db->join('tb_gejala', 'tb_gejala.id_gejala = tb_penanganan_khusus.id_gejala');
-            $_gejalaKhususDetailQuery = $this->db->get();
-            // var_dump($_gejalaKhususDetailQuery->row());
-            if ($_gejalaKhususDetailQuery->row() != null) {
-                echo '<tr>';
-                echo '<td align="center">' . $_no++ . '</td>';
-                echo '<td>' . $_gejalaKhususDetailQuery->row()->gejala . '</td>';
-                echo '<td>' . $_gejalaKhususDetailQuery->row()->solusi_khusus . '</td>';
-                echo '</tr>';
-            }
-        }
-        ?>
-    </tbody>
-</table> -->
