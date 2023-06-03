@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2023 at 11:27 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.6
+-- Generation Time: Jun 03, 2023 at 06:50 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,6 +41,26 @@ CREATE TABLE `tb_admin` (
 
 INSERT INTO `tb_admin` (`id`, `name`, `username`, `password`) VALUES
 (1, 'Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_artikel`
+--
+
+CREATE TABLE `tb_artikel` (
+  `id_artikel` int(11) NOT NULL,
+  `judul_artikel` varchar(250) NOT NULL,
+  `deskripsi_artikel` text NOT NULL,
+  `sumber_artikel` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_artikel`
+--
+
+INSERT INTO `tb_artikel` (`id_artikel`, `judul_artikel`, `deskripsi_artikel`, `sumber_artikel`) VALUES
+(1, 'Kambing syawal', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'https://getbootstrap.com/docs/4.0/content/typography/');
 
 -- --------------------------------------------------------
 
@@ -119,7 +139,39 @@ INSERT INTO `tb_diagnosis` (`id_diagnosis`, `id_hasil`, `id_gejala`) VALUES
 (22, 4, 'G35'),
 (23, 4, 'G39'),
 (24, 4, 'G44'),
-(25, 4, 'G45');
+(25, 4, 'G45'),
+(26, 5, 'G02'),
+(27, 5, 'G25'),
+(28, 5, 'G27'),
+(29, 5, 'G29'),
+(30, 5, 'G31'),
+(31, 5, 'G36'),
+(32, 5, 'G46'),
+(33, 5, 'G49'),
+(34, 6, 'G01'),
+(35, 6, 'G05'),
+(36, 6, 'G10'),
+(37, 7, 'G03'),
+(38, 7, 'G07'),
+(39, 7, 'G04'),
+(40, 7, 'G01'),
+(41, 7, 'G05'),
+(42, 7, 'G10'),
+(43, 8, 'G22'),
+(44, 8, 'G18'),
+(45, 8, 'G10'),
+(46, 9, 'G03'),
+(47, 9, 'G12'),
+(48, 9, 'G15'),
+(49, 9, 'G22'),
+(50, 10, 'G01'),
+(51, 10, 'G17'),
+(52, 10, 'G18'),
+(53, 11, 'G07'),
+(54, 11, 'G09'),
+(55, 11, 'G12'),
+(56, 11, 'G14'),
+(57, 11, 'G04');
 
 -- --------------------------------------------------------
 
@@ -130,7 +182,7 @@ INSERT INTO `tb_diagnosis` (`id_diagnosis`, `id_hasil`, `id_gejala`) VALUES
 CREATE TABLE `tb_gejala` (
   `id_gejala` varchar(4) NOT NULL,
   `gejala` text NOT NULL,
-  `bagian` enum('Daun','Batang','Akar','Buah') NOT NULL
+  `bagian` enum('Kepala','Badan','Kaki','Pencernaan','Pernafasan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -138,57 +190,57 @@ CREATE TABLE `tb_gejala` (
 --
 
 INSERT INTO `tb_gejala` (`id_gejala`, `gejala`, `bagian`) VALUES
-('G01', 'Kambing kesulitan berdiri/ Kambing ambruk/ Kambing selalu berbaring', 'Akar'),
-('G02', 'Kambing sering buang air kecil', 'Akar'),
-('G03', 'Kambing menggertakkan gigi', 'Akar'),
-('G04', 'Kambing terlihat kurus', 'Akar'),
-('G05', 'Perut kambing buncit', 'Akar'),
-('G06', 'Warna feses kambing tidak normal', 'Akar'),
-('G07', 'Terdapat bintik kemerahan disekitar mulut Kambing', 'Akar'),
-('G08', 'Terdapat benjolan dan luka berupa kerompeng hitam disekitaran mulut Kambing', 'Akar'),
-('G09', 'Cairan mata kambing keluar seperti nanah', 'Akar'),
-('G10', 'Kambing mengalami batuk-batuk', 'Akar'),
-('G11', 'Kambing mengalami diare', 'Akar'),
-('G12', 'Kotoran mata kambing banyak dan berlebihan/berair', 'Akar'),
-('G13', 'Bulu kambing mengalami kerontokan', 'Akar'),
-('G14', 'Kornea mata kambing berubah menjadi keruh atau menjadi menutupi lapisan bagian putih', 'Akar'),
-('G15', 'Terdapat busa disekitaran mulut kambing', 'Akar'),
-('G16', 'Adanya suara abnormal pada kambing', 'Akar'),
-('G17', 'Timbul benjolan pada bagian kaki kambing', 'Akar'),
-('G18', 'Bagian kaki kambing bernanah', 'Akar'),
-('G19', 'Kambing sering menggaruk-garuk badan', 'Akar'),
-('G20', 'Terkadang punggung kambing membungkuk', 'Akar'),
-('G21', 'Timbul kerak pada badan Kambing', 'Akar'),
-('G22', 'Kambing Gelisah', 'Akar'),
-('G23', 'Bulu kambing terlihat kusam saat dilihat dan terasa kasar saat disentuh', 'Akar'),
-('G24', 'Kambing mengalami gangguan pernafasan/memiliki nafas yang pendek', 'Akar'),
-('G25', 'Air susu kambing mengalami keenceran/pecah/kadang bercampur dengan darah', 'Akar'),
-('G26', 'Kambing mengalami dehidrasi', 'Akar'),
-('G27', 'Kambing mengalami peningkatan defikasi(BAB)', 'Akar'),
-('G28', 'Kambing mengalami sembelit(susah buang air besar/frekuensi bab kambing menjadi lebih sedikit dari biasanya)', 'Akar'),
-('G29', 'Terjadi pembengkakan pada area rahang kambing', 'Akar'),
-('G30', 'Terjadi pembengkakan pada celah kuku kambing', 'Akar'),
-('G31', 'Perut kambing dibagian kiri membesar dan kalau dipukul terdengan seperti suara gendang', 'Akar'),
-('G32', 'Terjadi Pembengkakan pada ambing kambing', 'Akar'),
-('G33', 'Area ambing terlihat memerah dan jika dipegang terasa panas', 'Akar'),
-('G34', 'Penurunan produksi susu', 'Akar'),
-('G35', 'Kambing mengalami lemas/lesu/lemah', 'Akar'),
-('G36', 'Kambing mengalami pucat pada bagian konjungtiva', 'Akar'),
-('G37', 'Terganggunya pertumbuhan pada kambing', 'Akar'),
-('G38', 'Pengelupasan kulit kuku pada kaki kambing', 'Akar'),
-('G39', 'Nafsu makan kambing berkurang/ kambing tidak mau makan', 'Akar'),
-('G40', 'Adanya kerompeng pada bagian kulit kambing terluar yang terlihat mengalami penebalan dan kerutan', 'Akar'),
-('G41', 'Melepuhnya bagian mukosa(lapisan rongga pada bagian mulut) kambing', 'Akar'),
-('G42', 'Kotoran kambing lebih cair dari pada biasanya', 'Akar'),
-('G43', 'Kambing mengalami kenaikan suhu tubuh (Demam)', 'Akar'),
-('G44', 'kambing menjadi sensitif terhadap sinar matahari', 'Akar'),
-('G45', 'Kornea mata kambing mengalami perubahan warna menjadi merah pekat', 'Akar'),
-('G46', 'Posisi ambing tidak simetris', 'Akar'),
-('G47', 'Saat dipegang puting ambing terasa mengeras', 'Akar'),
-('G48', 'Kaki kambing terlihat pincang', 'Akar'),
-('G49', 'Kambing mengalami sesak nafas (Dyspnoe)', 'Akar'),
-('G50', 'Pernafasan dengan frekuensi yang tidak normal dari pernafasan perut', 'Akar'),
-('G51', 'Keluar lendir pada bagian hidung kambing', 'Akar');
+('G01', 'Kambing kesulitan berdiri/ Kambing ambruk/ Kambing selalu berbaring', 'Kaki'),
+('G02', 'Kambing sering buang air kecil', 'Pencernaan'),
+('G03', 'Kambing menggertakkan gigi', 'Kepala'),
+('G04', 'Kambing terlihat kurus', 'Badan'),
+('G05', 'Perut kambing buncit', 'Pencernaan'),
+('G06', 'Warna feses kambing tidak normal', 'Pencernaan'),
+('G07', 'Terdapat bintik kemerahan disekitar mulut Kambing', 'Kepala'),
+('G08', 'Terdapat benjolan dan luka berupa kerompeng hitam disekitaran mulut Kambing', 'Kepala'),
+('G09', 'Cairan mata kambing keluar seperti nanah', 'Kepala'),
+('G10', 'Kambing mengalami batuk-batuk', 'Pernafasan'),
+('G11', 'Kambing mengalami diare', 'Pencernaan'),
+('G12', 'Kotoran mata kambing banyak dan berlebihan/berair', 'Kepala'),
+('G13', 'Bulu kambing mengalami kerontokan', 'Badan'),
+('G14', 'Kornea mata kambing berubah menjadi keruh atau menjadi menutupi lapisan bagian putih', 'Kepala'),
+('G15', 'Terdapat busa disekitaran mulut kambing', 'Kepala'),
+('G16', 'Adanya suara abnormal pada kambing', 'Pernafasan'),
+('G17', 'Timbul benjolan pada bagian kaki kambing', 'Kaki'),
+('G18', 'Bagian kaki kambing bernanah', 'Kaki'),
+('G19', 'Kambing sering menggaruk-garuk badan', 'Badan'),
+('G20', 'Terkadang punggung kambing membungkuk', 'Badan'),
+('G21', 'Timbul kerak pada badan Kambing', 'Badan'),
+('G22', 'Kambing Gelisah', 'Kepala'),
+('G23', 'Bulu kambing terlihat kusam saat dilihat dan terasa kasar saat disentuh', ''),
+('G24', 'Kambing mengalami gangguan pernafasan/memiliki nafas yang pendek', ''),
+('G25', 'Air susu kambing mengalami keenceran/pecah/kadang bercampur dengan darah', ''),
+('G26', 'Kambing mengalami dehidrasi', ''),
+('G27', 'Kambing mengalami peningkatan defikasi(BAB)', ''),
+('G28', 'Kambing mengalami sembelit(susah buang air besar/frekuensi bab kambing menjadi lebih sedikit dari biasanya)', ''),
+('G29', 'Terjadi pembengkakan pada area rahang kambing', ''),
+('G30', 'Terjadi pembengkakan pada celah kuku kambing', ''),
+('G31', 'Perut kambing dibagian kiri membesar dan kalau dipukul terdengan seperti suara gendang', ''),
+('G32', 'Terjadi Pembengkakan pada ambing kambing', ''),
+('G33', 'Area ambing terlihat memerah dan jika dipegang terasa panas', ''),
+('G34', 'Penurunan produksi susu', ''),
+('G35', 'Kambing mengalami lemas/lesu/lemah', ''),
+('G36', 'Kambing mengalami pucat pada bagian konjungtiva', ''),
+('G37', 'Terganggunya pertumbuhan pada kambing', ''),
+('G38', 'Pengelupasan kulit kuku pada kaki kambing', ''),
+('G39', 'Nafsu makan kambing berkurang/ kambing tidak mau makan', ''),
+('G40', 'Adanya kerompeng pada bagian kulit kambing terluar yang terlihat mengalami penebalan dan kerutan', ''),
+('G41', 'Melepuhnya bagian mukosa(lapisan rongga pada bagian mulut) kambing', ''),
+('G42', 'Kotoran kambing lebih cair dari pada biasanya', ''),
+('G43', 'Kambing mengalami kenaikan suhu tubuh (Demam)', ''),
+('G44', 'kambing menjadi sensitif terhadap sinar matahari', ''),
+('G45', 'Kornea mata kambing mengalami perubahan warna menjadi merah pekat', ''),
+('G46', 'Posisi ambing tidak simetris', ''),
+('G47', 'Saat dipegang puting ambing terasa mengeras', ''),
+('G48', 'Kaki kambing terlihat pincang', ''),
+('G49', 'Kambing mengalami sesak nafas (Dyspnoe)', ''),
+('G50', 'Pernafasan dengan frekuensi yang tidak normal dari pernafasan perut', ''),
+('G51', 'Keluar lendir pada bagian hidung kambing', '');
 
 -- --------------------------------------------------------
 
@@ -214,7 +266,8 @@ INSERT INTO `tb_hasil` (`id_hasil`, `id_penyakit`, `nm_user`, `alamat_user`, `pe
 (1, 'P01', 'nama', 'bengkulu', 'peternak', '2023-05-29', 0.960591),
 (2, 'P08', 'nama', 'manna', 'peternak', '2023-05-29', 0.9702),
 (3, 'P08', 'aku', 'sukaraja', 'petani', '2023-05-29', 0.9725),
-(4, 'P01', 'aku', 'sukaraja', 'petani', '2023-05-29', 0.99);
+(4, 'P01', 'aku', 'sukaraja', 'petani', '2023-05-29', 0.99),
+(11, 'P08', 'b;jl;k', 'jhojjoi', 'j;oo', '2023-06-03', 0.99);
 
 -- --------------------------------------------------------
 
@@ -234,7 +287,6 @@ CREATE TABLE `tb_penanganan` (
 
 INSERT INTO `tb_penanganan` (`id_penanganan`, `id_penyakit`, `id_solusi`) VALUES
 (1, 'P01', 'S01'),
-(2, 'P01', 'S04'),
 (3, 'P01', 'S06'),
 (4, 'P01', 'S08'),
 (5, 'P08', 'S11'),
@@ -328,6 +380,12 @@ ALTER TABLE `tb_admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_artikel`
+--
+ALTER TABLE `tb_artikel`
+  ADD PRIMARY KEY (`id_artikel`);
+
+--
 -- Indexes for table `tb_basis_pengetahuan`
 --
 ALTER TABLE `tb_basis_pengetahuan`
@@ -390,6 +448,12 @@ ALTER TABLE `tb_admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tb_artikel`
+--
+ALTER TABLE `tb_artikel`
+  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tb_basis_pengetahuan`
 --
 ALTER TABLE `tb_basis_pengetahuan`
@@ -399,13 +463,13 @@ ALTER TABLE `tb_basis_pengetahuan`
 -- AUTO_INCREMENT for table `tb_diagnosis`
 --
 ALTER TABLE `tb_diagnosis`
-  MODIFY `id_diagnosis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_diagnosis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `tb_hasil`
 --
 ALTER TABLE `tb_hasil`
-  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_penanganan`
