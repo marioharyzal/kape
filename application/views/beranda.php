@@ -428,55 +428,68 @@
 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="akar-tab" data-bs-toggle="tab" data-bs-target="#akar" type="button" role="tab" aria-controls="akar" aria-selected="true">Akar</button>
+                <button class="nav-link active" id="kepala-tab" data-bs-toggle="tab" data-bs-target="#kepala" type="button" role="tab" aria-controls="kepala" aria-selected="true">Kepala</button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link" id="batang-tab" data-bs-toggle="tab" data-bs-target="#batang" type="button" role="tab" aria-controls="batang" aria-selected="false">Batang</button>
+                <button class="nav-link" id="badan-tab" data-bs-toggle="tab" data-bs-target="#badan" type="button" role="tab" aria-controls="badan" aria-selected="false">Badan</button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link" id="daun-tab" data-bs-toggle="tab" data-bs-target="#daun" type="button" role="tab" aria-controls="daun" aria-selected="false">Daun</button>
+                <button class="nav-link" id="kaki-tab" data-bs-toggle="tab" data-bs-target="#kaki" type="button" role="tab" aria-controls="kaki" aria-selected="false">Kaki</button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link" id="buah-tab" data-bs-toggle="tab" data-bs-target="#buah" type="button" role="tab" aria-controls="buah" aria-selected="false">Buah</button>
+                <button class="nav-link" id="pencernaan-tab" data-bs-toggle="tab" data-bs-target="#pencernaan" type="button" role="tab" aria-controls="pencernaan" aria-selected="false">Pencernaan</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pernafasan-tab" data-bs-toggle="tab" data-bs-target="#pernafasan" type="button" role="tab" aria-controls="pernafasan" aria-selected="false">Pernafasan</button>
               </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="akar" role="tabpanel" aria-labelledby="akar-tab">
-                <?php foreach ($gejalaAkar as $akar) : ?>
+              <div class="tab-pane fade show active" id="kepala" role="tabpanel" aria-labelledby="kepala-tab">
+                <?php foreach ($gejalaKepala as $kepela) : ?>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="<?php echo $akar->id_gejala; ?>" name="gejala[]" id="gejalan-akar-<?php echo $akar->id_gejala; ?>">
-                    <label class="form-check-label" for="gejalan-akar-<?php echo $akar->id_gejala; ?>">
-                      <?php echo $akar->gejala; ?>
+                    <input class="form-check-input" type="checkbox" value="<?php echo $kepela->id_gejala; ?>" name="gejala[]" id="gejalan-kepela-<?php echo $kepela->id_gejala; ?>">
+                    <label class="form-check-label" for="gejalan-kepela-<?php echo $kepela->id_gejala; ?>">
+                      <?php echo $kepela->gejala; ?>
                     </label>
                   </div>
                 <?php endforeach; ?>
               </div>
-              <div class="tab-pane fade" id="batang" role="tabpanel" aria-labelledby="batang-tab">
-                <?php foreach ($gejalaBatang as $batang) : ?>
+              <div class="tab-pane fade" id="badan" role="tabpanel" aria-labelledby="badan-tab">
+                <?php foreach ($gejalaBadan as $badan) : ?>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="<?php echo $batang->id_gejala; ?>" name="gejala[]" id="gejalan-batang-<?php echo $batang->id_gejala; ?>">
-                    <label class="form-check-label" for="gejalan-batang-<?php echo $batang->id_gejala; ?>">
-                      <?php echo $batang->gejala; ?>
+                    <input class="form-check-input" type="checkbox" value="<?php echo $badan->id_gejala; ?>" name="gejala[]" id="gejalan-badan-<?php echo $badan->id_gejala; ?>">
+                    <label class="form-check-label" for="gejalan-badan-<?php echo $badan->id_gejala; ?>">
+                      <?php echo $badan->gejala; ?>
                     </label>
                   </div>
                 <?php endforeach; ?>
               </div>
-              <div class="tab-pane fade" id="daun" role="tabpanel" aria-labelledby="daun-tab">
-                <?php foreach ($gejalaDaun as $daun) : ?>
+              <div class="tab-pane fade" id="kaki" role="tabpanel" aria-labelledby="kaki-tab">
+                <?php foreach ($gejalaKaki as $kaki) : ?>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="<?php echo $daun->id_gejala; ?>" name="gejala[]" id="gejalan-daun-<?php echo $daun->id_gejala; ?>">
-                    <label class="form-check-label" for="gejalan-daun-<?php echo $daun->id_gejala; ?>">
-                      <?php echo $daun->gejala; ?>
+                    <input class="form-check-input" type="checkbox" value="<?php echo $kaki->id_gejala; ?>" name="gejala[]" id="gejalan-kaki-<?php echo $kaki->id_gejala; ?>">
+                    <label class="form-check-label" for="gejalan-kaki-<?php echo $kaki->id_gejala; ?>">
+                      <?php echo $kaki->gejala; ?>
                     </label>
                   </div>
                 <?php endforeach; ?>
               </div>
-              <div class="tab-pane fade" id="buah" role="tabpanel" aria-labelledby="buah-tab">
-                <?php foreach ($gejalaBuah as $buah) : ?>
+              <div class="tab-pane fade" id="pencernaan" role="tabpanel" aria-labelledby="pencernaan-tab">
+                <?php foreach ($gejalaPencernaan as $pencernaan) : ?>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="<?php echo $buah->id_gejala; ?>" name="gejala[]" id="gejalan-buah-<?php echo $buah->id_gejala; ?>">
-                    <label class="form-check-label" for="gejalan-buah-<?php echo $buah->id_gejala; ?>">
-                      <?php echo $buah->gejala; ?>
+                    <input class="form-check-input" type="checkbox" value="<?php echo $pencernaan->id_gejala; ?>" name="gejala[]" id="gejalan-pencernaan-<?php echo $pencernaan->id_gejala; ?>">
+                    <label class="form-check-label" for="gejalan-pencernaan-<?php echo $pencernaan->id_gejala; ?>">
+                      <?php echo $pencernaan->gejala; ?>
+                    </label>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+              <div class="tab-pane fade" id="pernafasan" role="tabpanel" aria-labelledby="pernafasan-tab">
+                <?php foreach ($gejalaPernafasan as $pernafasan) : ?>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="<?php echo $pernafasan->id_gejala; ?>" name="gejala[]" id="gejalan-pernafasan-<?php echo $pernafasan->id_gejala; ?>">
+                    <label class="form-check-label" for="gejalan-pernafasan-<?php echo $pernafasan->id_gejala; ?>">
+                      <?php echo $pernafasan->gejala; ?>
                     </label>
                   </div>
                 <?php endforeach; ?>
