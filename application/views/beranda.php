@@ -115,7 +115,7 @@
               <tr class="table-dark">
                 <th scope="col">No</th>
                 <th scope="col">Judul Artikel</th>
-                <th scope="col">Aksi</th>
+                <th scope="col">Sumber Artikel</th>
               </tr>
             </thead>
             <tbody>
@@ -124,44 +124,13 @@
                 <tr>
                   <td class="text-center"><?php echo ++$no; ?></td>
                   <td><?php echo $row->judul_artikel; ?></td>
-                  <td>
-                    <button type="button" class="btn btn-sm btn-info detail-artikel" data-id="<?php echo $row->id_artikel; ?>" data-bs-toggle="modal" data-bs-target="#modal-artikel">
-                      Detail
-                    </button>
-                  </td>
+                  <td><?php echo $row->sumber_artikel; ?></td>
                 </tr>
               <?php endforeach; ?>
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade bd-example-modal-lg" id="modal-artikel" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Artikel</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div>
-              <strong>Judul Artikel</strong>
-              <br />
-              <span id='p-judul-artikel'></span>
-              <br /><br />
-              <strong>Deskripsi </strong>
-              <br />
-              <span id='p-deskripsi'></span>
-              <br /><br />
-              <strong>Sumber</strong>
-              <br />
-              <span id='p-sumber'></span>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <div class="col-md-12 mt-2 text-center">
+            <a href="<?php echo base_url('index.php/beranda/data_artikel'); ?>" class="btn btn-primary">Lihat semua data</a>
           </div>
         </div>
       </div>

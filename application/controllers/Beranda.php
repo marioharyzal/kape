@@ -58,12 +58,10 @@ class Beranda extends CI_Controller
 		$this->load->view('data_penyakit', $data);
 	}
 
-	public function detail_artikel($id)
+	public function data_artikel()
 	{
-		$artikel = $this->Model_artikel->find($id);
-		$this->output
-			->set_content_type('application/json')
-			->set_output(json_encode($artikel->row_array()));
+		$data['artikel'] = $this->Model_artikel->get()->result();
+		$this->load->view('data_artikel', $data);
 	}
 
 	public function detail_hasil($id_hasil)
