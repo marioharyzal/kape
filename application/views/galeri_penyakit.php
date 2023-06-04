@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Beranda | Kambing Perah</title>
+    <title>Geleri Penyakit | Kambing Perah</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -32,7 +32,7 @@
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#Artikel">Artikel</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#penyakit">Penyakit</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#diagnosis">Diagnosis</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('index.php/beranda/galeri_penyakit'); ?>">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('index.php/auth/login'); ?>">Login</a></li>
                 </ul>
             </div>
@@ -40,24 +40,33 @@
     </nav>
 
     <!-- Services-->
-
-    <section class="bg-light" id="artikel">
-        <div class="container text-center mb-4">
-            <h2>Artikel</h2>
-        </div>
+    <section class="bg-light" id="penyakit">
         <div class="container">
-            <!-- Begin page content -->
-            <ul class="list-group list-group-flush">
-                <?php foreach ($artikel as $row_artikel) : ?>
-                    <li class="list-group-item">
-                        <h2 class="mt-5"><u><?= $row_artikel->judul_artikel ?></u></h2>
-                        <blockquote class="blockquote">
-                            <p class="mb-0"><?= $row_artikel->deskripsi_artikel ?></p>
-                            <footer class="blockquote-footer mt-1">Sumber <cite title="Source Title"><a href="$row_artikel->sumber_artikel"><?= $row_artikel->sumber_artikel ?></a></cite></footer>
-                        </blockquote>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
+            <div class="container text-center">
+                <h2>Galeri Penyakit</h2>
+            </div>
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <?php foreach ($penyakit as $row_penyakit) : ?>
+                            <div class="col-md-4">
+
+                                <div class="card mb-4 shadow-sm">
+                                    <img src="<?= base_url('uploads/' . $row_penyakit->gambar_penyakit) ?>" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <title><?= $row_penyakit->nm_penyakit ?></title>
+                                    </img>
+                                    <div class="card-body">
+                                        <p class="card-text"><?= $row_penyakit->nm_penyakit ?></p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Footer-->

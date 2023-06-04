@@ -30,9 +30,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#penyakit">Penyakit</a></li>
-          <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#gejala">Gejala</a></li>
-          <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#diagnosis">Diagnosis</a></li>
+          <li class="nav-item"><a class="nav-link" href="#artikel">Artikel</a></li>
+          <li class="nav-item"><a class="nav-link" href="#penyakit">Penyakit</a></li>
+          <li class="nav-item"><a class="nav-link" href="#diagnosis">Diagnosis Penyakit</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?php echo base_url('index.php/beranda/galeri_penyakit'); ?>">Galeri</a></li>
           <li class="nav-item"><a class="nav-link" href="<?php echo base_url('index.php/auth/login'); ?>">Login</a></li>
         </ul>
       </div>

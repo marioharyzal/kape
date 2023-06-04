@@ -64,6 +64,12 @@ class Beranda extends CI_Controller
 		$this->load->view('data_artikel', $data);
 	}
 
+	public function galeri_penyakit()
+	{
+		$data['penyakit'] = $this->Model_penyakit->get()->result();
+		$this->load->view('galeri_penyakit', $data);
+	}
+
 	public function detail_hasil($id_hasil)
 	{
 		$hasil = $this->Model_data_hasil_diagnosis->get_where_detail($id_hasil)->row();
