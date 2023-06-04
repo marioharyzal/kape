@@ -30,10 +30,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#Artikel">Artikel</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#penyakit">Penyakit</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#gejala">Gejala</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('/'); ?>#diagnosis">Diagnosis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#artikel">Artikel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#penyakit">Penyakit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#diagnosis">Diagnosis Penyakit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('index.php/beranda/galeri_penyakit'); ?>">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('index.php/auth/login'); ?>">Login</a></li>
                 </ul>
             </div>
@@ -48,86 +48,47 @@
                 <h2 class="section-heading text-uppercase mt-5">Penyakit</h2>
                 <h3 class="section-subheading text-muted">Daftar Penyakit pada Kambing Perah Anglo Nubian</h3>
             </div>
-            <div class="row text-left">
-                <div class="col-md-12">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr class="table-dark">
-                                <th scope="col">No</th>
-                                <th scope="col">Kode</th>
-                                <th scope="col">Nama Penyakit</th>
-                                <th scope="col">Penyebab</th>
-                                <!-- <th scope="col">Daur Penyakit</th>
-                              <th scope="col">Faktor</th> -->
-                                <th scope="col">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $no = 0;
-                            foreach ($penyakit as $row) : ?>
-                                <tr>
-                                    <td class="text-center"><?php echo ++$no; ?></td>
-                                    <td class="text-center"><?php echo $row->id_penyakit; ?></td>
-                                    <td><?php echo $row->nm_penyakit; ?></td>
-                                    <td><?php echo $row->penyebab; ?></td>
-                                    <!-- <td><?php echo $row->daur_penyakit; ?></td>
-                                    <td><?php echo $row->faktor; ?></td>
--->
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-info detail-penyakit" data-id="<?php echo $row->id_penyakit; ?>" data-bs-toggle="modal" data-bs-target="#modal-penyakit">
-                                            <!-- <i class="fas fa-info"></i> -->
-                                            Detail
-                                        </button>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
+            <main role="main" class="container">
+                <ul class="list-group list-group-flush">
+                    <?php foreach ($penyakit as $row_penyakit) : ?>
+                        <li class="list-group-item mb-2">
+                            <div class="row">
+                                <div class="col-md-8 blog-main">
+                                    <h3 class="pb-4 mb-4 mt-2 font-italic border-bottom">
+                                        <?= $row_penyakit->nm_penyakit ?>
+                                    </h3>
 
-            </div>
-        </div>
+                                    <div class="blog-post">
+                                        <p class="blog-post-meta">ID Penyakit: <?= $row_penyakit->id_penyakit ?></p>
+                                        <p>Deskripsi: <br><?= $row_penyakit->daur_penyakit ?></p>
+                                        <hr>
+                                        <p>Peneyebab: <br><?= $row_penyakit->penyebab ?></p>
+                                        <hr>
+                                        <p>Faktor: <br><?= $row_penyakit->faktor ?></p>
+                                    </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="modal-penyakit" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Penyakit</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <!-- <strong>Kode Penyakit</strong>
-                        <br/>
-                        <span id='p-kode-penyakit'></span>
-                        <br/><br/>
-                        <strong>Nama Penyakit</strong>
-                        <br/>
-                        <span id='p-nama-penyakit'></span>
-                        <br/><br/>
-                        <strong>Penyebab</strong>
-                        <br/>
-                        <span id='p-penyebab'></span>
-                        <br/><br/> -->
-                            <strong>Daur Penyakit</strong>
-                            <br />
-                            <span id='p-daur-penyakit'></span>
-                            <br /><br />
-                            <strong>Faktor</strong>
-                            <br />
-                            <span id='p-faktor'></span>
-                            <br /><br />
-                            <strong>Gambar Penyakit</strong>
-                            <br />
-                            <span id='p-gambar-penyakit'></span>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
+                                </div>
+
+                                <aside class="col-md-4 blog-sidebar">
+                                    <div class="col-md">
+                                        <div class="card mb-4 shadow-sm">
+                                            <img src="<?= base_url('uploads/' . $row_penyakit->gambar_penyakit) ?>" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                            <title>Placeholder</title>
+                                            </img>
+
+                                            <div class="card-body">
+                                                <p class="card-text">Gamber penyakit <?= $row_penyakit->nm_penyakit ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside><!-- /.blog-sidebar -->
+
+                            </div><!-- /.row -->
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </main><!-- /.container -->
+
         </div>
     </section>
     <!-- Footer-->
@@ -142,36 +103,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="<?php echo base_url('assets/js/scripts.js'); ?>"></script>
-    <script>
-        const detailPenyakitBtn = document.querySelectorAll('.detail-penyakit');
-
-        let daurPenyakitP = document.querySelector('#p-daur-penyakit');
-        let faktorP = document.querySelector('#p-faktor');
-        let gambarPenykaitP = document.querySelector('#p-gambar-penyakit');
-
-        function bindEvent(callback, eventType, targets) {
-            targets.forEach((target) => {
-                target.addEventListener(eventType, callback);
-            });
-        };
-
-        bindEvent((e) => {
-            fetch(`<?php echo base_url('index.php/beranda/detail-penyakit/'); ?>${e.target.dataset.id}`)
-                .then(response => response.json())
-                .then((data) => {
-                    // kodePenyakitP.innerHTML = data.id_penyakit;
-                    // namaPenyakitP.innerHTML = data.nm_penyakit;
-                    // penyebabP.innerHTML = data.penyebab;
-                    daurPenyakitP.innerHTML = data.daur_penyakit;
-                    faktorP.innerHTML = data.faktor;
-                    if (data.gambar_penyakit != null) {
-                        gambarPenykaitP.innerHTML = `<img src="/kape/uploads/${data.gambar_penyakit}" class="mx-auto d-block img-thumbnail" style="height: 200px;">`;
-                    } else {
-                        gambarPenykaitP.innerHTML = '';
-                    }
-                });
-        }, 'click', detailPenyakitBtn);
-    </script>
 </body>
 
 </html>
